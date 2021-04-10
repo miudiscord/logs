@@ -136,7 +136,7 @@ client.on("unhandledMessageUpdate", (oldMessage, newMessage) => {
 // Events related to the presenceUpdate event.
 
 client.on("guildMemberOffline", (member, oldStatus) => {
-  console.log(member.user.tag+" became offline!");
+  console.log(member.user.tag+" was" +oldStatus+" now they are offline!");
 });
 
 client.on("guildMemberOnline", (member, newStatus) => {
@@ -144,7 +144,7 @@ client.on("guildMemberOnline", (member, newStatus) => {
 });
 
 client.on("unhandledPresenceUpdate", (oldPresence, newPresence) => {
-  console.log("Presence for member "+oldPresence.member.user.tag+"' was updated but @gardena/logs couldn't find what was updated...");
+  console.log("Presence for member '"+oldPresence.member.user.tag+"' was updated but @gardena/logs couldn't find what was updated...");
 });
 
 /* Role Events */
