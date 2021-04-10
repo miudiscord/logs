@@ -15,8 +15,9 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: "@gardenabot"
+      - run: npm ci
+      - run: npm run prepare
       - run: echo "registry=https://npm.pkg.github.com/@gardenabot" >> .npmrc
-      - run: npm install
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GIT_PCK_TOKEN}}
